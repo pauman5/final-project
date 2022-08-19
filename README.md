@@ -1,28 +1,28 @@
 # Dia 1: (19/08/2022)
 
-> Lo primero es acabar de repasar las directrices del proyecto y los archivos y estructura general.
+ Lo primero es acabar de repasar las directrices del proyecto y los archivos y estructura general.
 
 >> Objetivos de hoy: *signUp completo*
->>
->> 1. Hacer las estructuras html del los componentes:
->>    - Nav
->>    - Footer
->>    - SignUp
->>    - Auth
->>    - Home
->>
->> 2. Aplicar estilo a los componentes mediante Tailwind:
->>    - Nav
->>    - Footer
->>    - SignUp
->> 
->> 3. Aplicacion del store en el signUp: 
->>    - Primeras pruebas
->>    - signUp
->> 
->> 4. Aplicación de supabase en el signUp:
->>    - Primeras pruebas
->>    - signUp
+
+ 1. Hacer las estructuras html del los componentes:
+    - Nav
+    - Footer
+    - SignUp
+    - Auth
+    - Home
+
+ 2. Aplicar estilo a los componentes mediante Tailwind:
+    - Nav
+    - Footer
+    - SignUp
+ 
+ 3. Aplicacion del store en el signUp: 
+    - Primeras pruebas
+    - signUp
+ 
+ 4. Aplicación de supabase en el signUp:
+    - Primeras pruebas
+    - signUp
 
 
 
