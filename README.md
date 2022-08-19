@@ -1,14 +1,34 @@
-# final-boiler-plate
+# Dia 1: (19/08/2022)
 
-This template should help get you started developing the final project running on Vue 3 with the composition API, Pinia as a state management tool, vue router, vite and lastly Supabase running on the backend.
+> Lo primero es acabar de repasar las directrices del proyecto y los archivos y estructura general.
 
-This is meant as an advanced starter ready to plug in your supabase variables and run directly on a local server already connected to your Supabase instance. 
+>> Objetivos de hoy: *signUp completo*
+>>
+>> 1. Hacer las estructuras html del los componentes:
+>>    - Nav
+>>    - Footer
+>>    - SignUp
+>>    - Auth
+>>    - Home
+>>
+>> 2. Aplicar estilo a los componentes mediante Tailwind:
+>>    - Nav
+>>    - Footer
+>>    - SignUp
+>> 
+>> 3. Aplicacion del store en el signUp: 
+>>    - Primeras pruebas
+>>    - signUp
+>> 
+>> 4. Aplicación de supabase en el signUp:
+>>    - Primeras pruebas
+>>    - signUp
 
-You are given some functions to see how the supabase ecosystem works with Vue and more specifically, pinia as a state management tool.
 
-You can add any CSS framework of your liking like tailwindCSS, Bootstrap, MaterialUI or many of the cool libaries that exist in the web. 
 
-## Important
+
+
+<!-- ## Important
 This app is not setUp to be deployed to a production environment like vercel or netlify. 
 
 Friday on August 19 we will look at how can we deploy this app to Vercels ecosystem.
@@ -66,4 +86,4 @@ Mobb Depp
 Common
 Lil Supa
 ```
-[Hip Hop Spotify Playlist](https://open.spotify.com/playlist/4vKftyhS1gQovakehVcq1u?si=a7a119382dfe40da)
+[Hip Hop Spotify Playlist](https://open.spotify.com/playlist/4vKftyhS1gQovakehVcq1u?si=a7a119382dfe40da) -->
