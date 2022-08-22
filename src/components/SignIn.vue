@@ -1,10 +1,19 @@
 <template>
   <div>Sign In</div>
   <PersonalRouter :route="route" :buttonText="buttonText" />
-  <form action="">
-    <input type="text">
-    <input type="text">
-  </form>
+  <div>
+    <input 
+      type="email"
+      placeholder="Introduce un nombre de usuario"
+      v-model= "email"
+    >
+    <input 
+      type="password"
+      placeholder="Introduce una contraseña"
+      v-model= "password"
+    >
+    <button @click="signIn">Sign In</button>
+  </div>
   <p>Time to build up the Final Project!</p>
   <p class="wu-text">Wu Tang Forever</p>
 </template>

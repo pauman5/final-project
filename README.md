@@ -24,6 +24,19 @@
     - Primeras pruebas
     - signUp
 
+# Dia 2: (22/08/2022)
+
+>> Objetivos de hoy: *signOut y tareas*
+
+ 1. Hacer las estructuras html del los componentes:
+    - Footer
+    - Task
+   
+ 2. Logica de insertar tareas en la base de datos:
+    - Cerrar sesion
+    - Crear Task
+
+
 
 
 

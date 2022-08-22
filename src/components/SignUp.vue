@@ -1,19 +1,20 @@
 <template>
   <div>Sign Up</div>
   <PersonalRouter :route="route" :buttonText="buttonText" />
+  <div>
     <input 
       type="email"
       placeholder="Introduce un nombre de usuario"
       v-model= "email"
-      />
+    >
     <input 
       type="password"
       placeholder="Introduce una contraseña"
       v-model= "password"
-      />
-    <button @click="signUpHere">Sign up</button>
-  <p>Good Music, Patience and a lot effort</p>
-  <p>Keep calm and code on!</p>
+    >
+    <button @click="signUp">Sign up</button>
+  </div>
+    
 </template>
 
 <script setup>
@@ -23,8 +24,6 @@ import PersonalRouter from "./PersonalRouter.vue";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { createConditionalExpression } from "@vue/compiler-core";
-
-const storeUser = useUserStore();
 
 // Route Variables
 const route = "/auth/login";
@@ -36,7 +35,6 @@ const password = ref("");
 
 // Error Message
 const errorMsg = ref("");
-
 // Show hide password variable
 const passwordFieldType = computed(() =>
   hidePassword.value ? "password" : "text"
@@ -53,12 +51,16 @@ const hidePassword = ref(true);
 const redirect = useRouter();
 
 // Arrow function to SignUp user to supaBase with a timeOut() method for showing the error
-async function signUpHere () {
+const signUp = async () => {
   try {
-    await storeUser.signUp(email.value,password.value);
-    console.log("Registro enviado");
-  }catch(e) {
-    console.log(e)  
+    await useUserStore().signUp(email.value,password.value);
+    redirect.push({ path: route });
+  }catch(error) {
+    errorMsg.value = `Error: ${error.message}`;
+    // hides error message
+    setTimeout(() => {
+      errorMsg.value = null;
+    }, 5000);
   }
 }
 </script>
