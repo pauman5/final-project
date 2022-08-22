@@ -12,7 +12,15 @@
       placeholder="Introduce una contraseña"
       v-model= "password"
     >
+    <input 
+      type="password"
+      placeholder="Confirma la contraseña"
+      v-model= "confirmPassword"
+    >
     <button @click="signUp">Sign up</button>
+    <div v-if="errorMsg">
+      <p>{{ errorMsg }}</p>
+    </div>
   </div>
     
 </template>
@@ -32,6 +40,7 @@ const buttonText = "Test the Sign In Route";
 // Input Fields
 const email = ref("");
 const password = ref("");
+const confirmPassword = ref("");
 
 // Error Message
 const errorMsg = ref("");
@@ -52,15 +61,21 @@ const redirect = useRouter();
 
 // Arrow function to SignUp user to supaBase with a timeOut() method for showing the error
 const signUp = async () => {
-  try {
-    await useUserStore().signUp(email.value,password.value);
-    redirect.push({ path: route });
-  }catch(error) {
-    errorMsg.value = `Error: ${error.message}`;
-    // hides error message
-    setTimeout(() => {
+  if (password.value === confirmPassword.value) {
+    try {
+      await useUserStore().signUp(email.value,password.value);
+      redirect.push({ path: route });
+    }catch(error) {
+      errorMsg.value = `Error: ${error.message}`;
+      // hides error message
+      setTimeout(() => {
       errorMsg.value = null;
     }, 5000);
+    }
+  } else {
+    errorMsg.value = "Error: Contraseña y confirmar contraseña no coinciden!";
+    password.value = "";
+    confirmPassword.value = "";
   }
 }
 </script>

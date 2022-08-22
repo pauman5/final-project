@@ -2,35 +2,37 @@
   <div>
     <img src="" alt="">
     <div>
-      <p>Bienvenido de nuevo ${user.name}!!</p>
-      <button @click="signIn">Sign Out</button>
+      <p>Bienvenido de nuevo {{ userMail }}!!</p>
+      <button @click="signOut">Sign Out</button>
     </div>
+    <div>{{  }}</div>
   </div>
 </template>
 
 <script setup>
 //constant to save a variable that will hold the use router method
-
+import { useRouter } from "vue-router";
 // constant to save a variable that will get the user from store with a computed function imported from vue
+import { useUserStore } from "../stores/user";
 
 // constant that calls user email from the useUSerStore
+const userMail = useUserStore().user.email
+
+// Router to push user once SignedUp to Log In
+const redirect = useRouter();
 
 // constant that saves the user email and cleans out the @client from the user
 
 // async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
-const signIn = async () => {
+const signOut = async () => {
   try {
-    // calls the user store and send the users info to backend to logIn
-    await useUserStore().signOut(email.value);
-    // redirects user to the homeView
+    // calls the user store and send the users info to backend to logOut
+    await useUserStore().signOut();
+    // redirects user to the logIn Page
     redirect.push({ path: "/auth/login" });
   } catch (error) {
     // displays error message
-    errorMsg.value = `Error: ${error.message}`;
-    // hides error message
-    setTimeout(() => {
-      errorMsg.value = null;
-    }, 5000);
+    console.log (error);
   }
 };
 </script>

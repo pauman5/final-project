@@ -13,9 +13,10 @@
       v-model= "password"
     >
     <button @click="signIn">Sign In</button>
+    <div v-if="errorMsg">
+      <p>{{ errorMsg }}</p>
+    </div>
   </div>
-  <p>Time to build up the Final Project!</p>
-  <p class="wu-text">Wu Tang Forever</p>
 </template>
 
 <script setup>
