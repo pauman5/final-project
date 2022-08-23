@@ -1,9 +1,14 @@
 <template>
-  <div>  
-  <h3>{{ task.title }}</h3>
-  <p>{{ task.description }}</p>
-  <button @click="$emit('delete',task)">delete</button>
-  <button @click="$emit('change',task)">edit</button>
+  <div>
+    <h3>{{ task.title }}</h3>
+    <p>{{ task.description }}</p>
+    <button @click="$emit('deleteTask',task.id)">
+      delete
+    </button>
+    <button @click="$emit('toggleReminder',task.id,!task.is_complete)">
+      Done: {{ task.is_complete }} 
+    </button>
+    <button @click="$emit('changeTask',task)">edit</button>
   </div>
 </template>
 
@@ -14,15 +19,13 @@ const props = defineProps({
   task: Object,
 });
 
-const toDo = ref(false);
-
 const errorMsg = ref("");
 
 const editedTask = reactive({});
 
 const inputField = ref(false);
 
-const emit = defineEmits(['change', 'delete']);
+const emit = defineEmits(['deleteTask', 'toggleReminder']);
 
 </script>
 

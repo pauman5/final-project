@@ -27,5 +27,19 @@ export const useTaskStore = defineStore("tasks", {
         },
       ]);
     },
+    async deleteTask(taskId) {
+      console.log(useUserStore().user.id);
+      const { data, error } = await supabase
+        .from('tasks')
+        .delete()
+        .eq('id', taskId);
+    },
+    async toggleReminder(taskId, toggleValue) {
+      console.log(useUserStore().user.id);
+      const { data, error } = await supabase
+        .from('tasks')
+        .update({ 'is_complete': toggleValue })
+        .eq('id', taskId);
+    },
   },
 });

@@ -2,10 +2,9 @@
   <div>
     <img src="" alt="">
     <div>
-      <p>Bienvenido de nuevo {{ userMail }}!!</p>
+      <p>Bienvenido de nuevo {{ userMailClean }}!!</p>
       <button @click="signOut">Sign Out</button>
     </div>
-    <div>{{  }}</div>
   </div>
 </template>
 
@@ -22,6 +21,7 @@ const userMail = useUserStore().user.email;
 const redirect = useRouter();
 
 // constant that saves the user email and cleans out the @client from the user
+const userMailClean = userMail.split("@")[0];
 
 // async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
 const signOut = async () => {

@@ -7,7 +7,11 @@
     v-for="task in tasks" 
     :key="task.id"
   >
-    <TaskItem :task="task"/>
+    <TaskItem 
+      :task="task"
+      @deleteTask="deleteTask"
+      @toggleReminder="toggleReminder"
+    />
   </div>
 </template>
 
@@ -40,8 +44,43 @@ fetchTasks();
 const addTask = async (taskTitle,taskDescription) => {
     try {
       // calls the user store and send the users info to backend to logIn
-      useTaskStore().addTask(taskTitle,taskDescription)
-      tasks.value = await useTaskStore().fetchTasks();
+      await useTaskStore().addTask(taskTitle,taskDescription)
+      fetchTasks();
+      if (error) throw error;
+      console.log(tasks.value);
+    } catch (error) {
+      // displays error message
+      errorMsg.value = `Error: ${error.message}`;
+      // hides error message
+      setTimeout(() => {
+        errorMsg.value = null;
+      }, 5000);
+    }
+};
+
+const deleteTask = async (taskId) => {
+    try {
+      // calls the user store and send the users info to backend to logIn
+      await useTaskStore().deleteTask(taskId);
+      fetchTasks();
+      if (error) throw error;
+      console.log(tasks.value);
+    } catch (error) {
+      // displays error message
+      errorMsg.value = `Error: ${error.message}`;
+      // hides error message
+      setTimeout(() => {
+        errorMsg.value = null;
+      }, 5000);
+    }
+};
+
+const toggleReminder = async (taskId,newValue) => {
+    try {
+      // calls the user store and send the users info to backend to logIn
+      await useTaskStore().toggleReminder(taskId,newValue);
+      fetchTasks();
+      if (error) throw error;
     } catch (error) {
       // displays error message
       errorMsg.value = `Error: ${error.message}`;
