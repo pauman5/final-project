@@ -36,6 +36,21 @@
     - Cerrar sesion
     - Crear Task
 
+# Dia 3: (23/08/2022)
+
+>> Objetivos de hoy: *events&props y empezar style*
+
+ 1. Hacer las estructuras html del los componentes:
+    -Task
+
+ 2. Arreglar la estructura general, que el v-for este en la home.
+   
+ 2. Completar la logica de la tarea:
+    - eliminar tarea
+    - editar tarea
+
+
+
 
 
 
