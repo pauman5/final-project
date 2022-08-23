@@ -16,7 +16,7 @@ import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 
 // constant that calls user email from the useUSerStore
-const userMail = useUserStore().user.email
+const userMail = useUserStore().user.email;
 
 // Router to push user once SignedUp to Log In
 const redirect = useRouter();

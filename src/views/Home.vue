@@ -1,7 +1,14 @@
 <template>
   <Nav />
-  <NewTask />
-  <TaskItem/>
+  <NewTask
+    @addTask="addTask"
+  />
+  <div
+    v-for="task in tasks" 
+    :key="task.id"
+  >
+    <TaskItem :task="task"/>
+  </div>
 </template>
 
 <script setup>
@@ -11,8 +18,40 @@ import Nav from "../components/Nav.vue";
 import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";
 
+const tasks = ref([])
 
 const errorMsg = ref(null);
+
+const fetchTasks = async () => {
+  try {
+    tasks.value = await useTaskStore().fetchTasks();
+    if (error) throw error;
+    console.log(tasks.value);
+  } catch (error) {
+    errorMsg.value = error.message;
+    setTimeout(() => {
+      errorMsg.value = false;
+    }, 5000)
+  }
+};
+
+fetchTasks();
+
+const addTask = async (taskTitle,taskDescription) => {
+    try {
+      // calls the user store and send the users info to backend to logIn
+      useTaskStore().addTask(taskTitle,taskDescription)
+      tasks.value = await useTaskStore().fetchTasks();
+    } catch (error) {
+      // displays error message
+      errorMsg.value = `Error: ${error.message}`;
+      // hides error message
+      setTimeout(() => {
+        errorMsg.value = null;
+      }, 5000);
+    }
+};
+
 
 </script>
 

@@ -1,42 +1,29 @@
 <template>
-  <div 
-    v-for="task in tasks" 
-    :key="task"
-  >
+  <div>  
   <h3>{{ task.title }}</h3>
   <p>{{ task.description }}</p>
+  <button @click="$emit('delete',task)">delete</button>
+  <button @click="$emit('change',task)">edit</button>
   </div>
 </template>
 
 <script setup>
-// const emit = defineEmits([
-//   ENTER-EMITS-HERE
-// ])
-import { ref } from "vue";
-import { useTaskStore } from "../stores/task";
+import { reactive, ref} from "vue";
 
-const tasks = ref([]);
-const errorMsg = ref(null);
+const props = defineProps({
+  task: Object,
+});
 
-const fetchTasks = async () => {
-  try {
-    tasks.value = await useTaskStore().fetchTasks();
-    if (error) throw error;
-    console.log(tasks.value);
-  } catch (error) {
-    errorMsg.value = error.message;
-    setTimeout(() => {
-      errorMsg.value = false;
-    }, 5000)
-  }
-};
+const toDo = ref(false);
 
-fetchTasks();
+const errorMsg = ref("");
 
-// const define emits () {
+const editedTask = reactive({});
 
-// }
-// const props = defineProps(["ENTER-PROP-HERE"]);
+const inputField = ref(false);
+
+const emit = defineEmits(['change', 'delete']);
+
 </script>
 
 <style></style>
