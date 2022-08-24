@@ -45,9 +45,19 @@
 
  2. Arreglar la estructura general, que el v-for este en la home.
    
- 2. Completar la logica de la tarea:
+ 3. Completar la logica de la tarea:
     - eliminar tarea
     - editar tarea
+
+# Dia 4: (24/08/2022)
+
+>> Objetivos de hoy: *editar tarea y style*
+
+ 1. Terminar la logica para editar las tareas.
+
+ 2. Terminar estilos.
+
+ 3. Colgar la pagina en Vercel
 
 
 
