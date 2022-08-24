@@ -1,18 +1,39 @@
 <template>
-  <div>Sign In</div>
+  <h1>Sign In</h1>
   <PersonalRouter :route="route" :buttonText="buttonText" />
-  <div>
-    <input 
+  <div class="border-8">
+    <div class="flex -mr-px justify-center w-15 p-4">
+      <span
+      class="flex items-center leading-normal bg-white px-3 border-0 rounded rounded-r-none text-2xl text-gray-600"
+    >
+      <i class="fas fa-user-circle"></i>
+    </span>
+    </div>
+    <input
       type="email"
       placeholder="Introduce un nombre de usuario"
-      v-model= "email"
-    >
-    <input 
+      v-model="email"
+    />
+    <div class="flex -mr-px justify-center w-15 p-4">
+              <span
+                class="flex items-center leading-normal bg-white rounded rounded-r-none text-xl px-3 whitespace-no-wrap text-gray-600"
+              >
+                <i class="fas fa-lock"></i>
+              </span>
+    </div>
+    <input
       type="password"
       placeholder="Introduce una contraseña"
-      v-model= "password"
-    >
-    <button @click="signIn">Sign In</button>
+      v-model="password"
+    />
+    <div class="flex -mr-px">
+              <span
+                class="flex items-center leading-normal bg-white rounded rounded-l-none border-0 px-3 whitespace-no-wrap text-gray-600"
+              >
+                <i class="fas fa-eye-slash"></i>
+              </span>
+    </div>
+    <button class="border-x border-y border-emerald-400 px-2 py-1 rounded-md text-emerald-400 text-s font-bold hover:bg-slate-50 hover:text-emerald-400 transition duration-3000" @click="signIn">Sign In</button>
     <div v-if="errorMsg">
       <p>{{ errorMsg }}</p>
     </div>

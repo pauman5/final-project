@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <h2>Añadir Tarea</h2>
-    <input v-model="title" type="texto" placeholder="Titulo" />
-    <input v-model="description" type="texto" placeholder="Descripción" />
-    <button @click="addTask">Añadir Tarea</button>
+  <div class="flex flex-col items-center max-w-lg mx-auto my-10 bg-white p-5 rounded-xl shadow shadow-slate-300">
+    <h1 class="text-2xl font-medium pb-1">Añade una tarea!</h1>
+    <input class="w-full my-1 py-1 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow" v-model="title" type="texto" placeholder="Titulo" />
+    <input class="w-full my-1 py-1 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow" v-model="description" type="texto" placeholder="Descripción" />
+    <button @click="addTask" class="w-full border-x border-y border-emerald-400 mt-1 py-1 rounded-md text-emerald-400 font-bold hover:bg-emerald-400 hover:text-gray-100 transition duration-3000">Añadir Tarea</button>
   </div>
 </template>
 
@@ -40,8 +40,8 @@ const addTask = async () => {
      }, 5000);
   }
 };
-
-
 </script>
 
-<style></style>
+<style>
+
+</style>

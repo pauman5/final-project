@@ -29,8 +29,9 @@ onMounted(async () => {
 
 <template>
   <div>
-    <router-view />
+    <router-view class="bg-gray-100"/>
   </div>
 </template>
 
-<style></style>
+<style>
+</style>

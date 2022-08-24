@@ -6,6 +6,3 @@
 
 <style></style>
 
-<!-- 
-**noHints**
--->
