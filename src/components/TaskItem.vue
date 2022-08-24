@@ -1,31 +1,62 @@
 <template>
   <div>
     <h3>{{ task.title }}</h3>
+    <input v-if="editing" v-model="newTitle" type="texto" placeholder="Nuevo Titulo"/>
     <p>{{ task.description }}</p>
+    <input v-if="editing"  v-model="newDescription" type="texto" placeholder="Nueva Descripción" />
+    <button v-if="editing" @click="editTask(task)">
+      Guardar Cambios
+    </button>
     <button @click="$emit('deleteTask',task.id)">
       delete
     </button>
     <button @click="$emit('toggleReminder',task.id,!task.is_complete)">
       Done: {{ task.is_complete }} 
     </button>
-    <button @click="$emit('changeTask',task)">edit</button>
+    <button @click="changeEditing">
+      edit
+    </button>
   </div>
 </template>
 
 <script setup>
-import { reactive, ref} from "vue";
+import { ref} from "vue";
 
 const props = defineProps({
   task: Object,
 });
 
+let editing = ref(false);
+
 const errorMsg = ref("");
 
-const editedTask = reactive({});
+const newTitle = ref("");
 
-const inputField = ref(false);
+const newDescription = ref("");
 
-const emit = defineEmits(['deleteTask', 'toggleReminder']);
+const emit = defineEmits(['deleteTask', 'toggleReminder', 'editTask']);
+
+const changeEditing = () => {
+  editing.value = !editing.value;
+};
+
+const editTask = (task) => {
+  if (newTitle.value && newDescription.value) {
+    emit("editTask",task.id,newTitle.value,newDescription.value);
+  } else if (!newDescription.value) {
+    emit("editTask",task.id,newTitle.value,task.description);
+  } else if (!newTitle.value) {
+    emit("editTask",task.id,task.title,newDescription.value);
+  } else {
+    errorMsg.value = `Error: Debe rellenar algun campo para editar`;
+    errorMsgContainer.value = true;
+    setTimeout(() => {
+       errorMsg.value = null;
+       errorMsgContainer.value = false;
+     }, 5000);
+  }
+  editing.value = false;
+};
 
 </script>
 

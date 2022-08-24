@@ -8,6 +8,8 @@ export const useTaskStore = defineStore("tasks", {
   }),
   actions: {
     async fetchTasks() {
+      console.log("Imprimiendo lista de tareas de user:");
+      console.log(useUserStore().user.id);
       const { data: tasks } = await supabase
         .from("tasks")
         .select("*")
@@ -17,6 +19,7 @@ export const useTaskStore = defineStore("tasks", {
     },
     // New code
     async addTask(title, description) {
+      console.log("Tarea añadida!");
       console.log(useUserStore().user.id);
       const { data, error } = await supabase.from("tasks").insert([
         {
@@ -28,17 +31,31 @@ export const useTaskStore = defineStore("tasks", {
       ]);
     },
     async deleteTask(taskId) {
-      console.log(useUserStore().user.id);
+      console.log("Tarea eliminada!");
       const { data, error } = await supabase
         .from('tasks')
         .delete()
         .eq('id', taskId);
     },
     async toggleReminder(taskId, toggleValue) {
-      console.log(useUserStore().user.id);
+      console.log("Cambio estado de tarea.");
       const { data, error } = await supabase
         .from('tasks')
         .update({ 'is_complete': toggleValue })
+        .eq('id', taskId);
+    },
+    async editTitle(taskId, newTitle) {
+      console.log("Titulo Tarea editado!");
+      const { data, error } = await supabase
+        .from('tasks')
+        .update({ 'title': newTitle })
+        .eq('id', taskId);
+    },
+    async editDescription(taskId, newDescription) {
+      console.log("Descripcion Tarea editada!");
+      const { data, error } = await supabase
+        .from('tasks')
+        .update({ 'description': newDescription })
         .eq('id', taskId);
     },
   },

@@ -11,6 +11,7 @@
       :task="task"
       @deleteTask="deleteTask"
       @toggleReminder="toggleReminder"
+      @editTask="editTask"
     />
   </div>
 </template>
@@ -79,6 +80,23 @@ const toggleReminder = async (taskId,newValue) => {
     try {
       // calls the user store and send the users info to backend to logIn
       await useTaskStore().toggleReminder(taskId,newValue);
+      fetchTasks();
+      if (error) throw error;
+    } catch (error) {
+      // displays error message
+      errorMsg.value = `Error: ${error.message}`;
+      // hides error message
+      setTimeout(() => {
+        errorMsg.value = null;
+      }, 5000);
+    }
+};
+
+const editTask = async (taskId,newTitle,newDescription) => {
+    try {
+      // calls the user store and send the users info to backend to logIn
+      await useTaskStore().editTitle(taskId,newTitle);
+      await useTaskStore().editDescription(taskId,newDescription);
       fetchTasks();
       if (error) throw error;
     } catch (error) {
