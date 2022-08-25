@@ -4,11 +4,11 @@
     <NewTask
       @addTask="addTask"
     />
-    <div class="flex flex-wrap">
+    <div class="flex flex-wrap items-center justify-center ">
       <div
         v-for="task in tasks" 
         :key="task.id"
-        class="w-1/3"
+        class="w-96 my-2"
       >
         <TaskItem 
           :task="task"

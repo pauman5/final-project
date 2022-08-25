@@ -1,10 +1,10 @@
 <template>
-<div class="bg-white p-5 max-w-md mx-auto rounded shadow shadow-slate-300">
-    <h2 class="text-3xl px-4 ">Sign In</h2>
+<div class="bg-white p-5 max-w-md mx-auto rounded shadow-lg shadow-slate-300">
+    <h2 class="text-3xl font-bold text-emerald-300 px-4 ">¡Bienvenido!</h2>
     <div class="mt-2 space-y-2">
         <input
           class="w-full border rounded h-12 px-4 focus:outline-none"
-          placeholder="Email adress "
+          placeholder="Email"
           type="email"
           v-model="email"
         />
@@ -12,7 +12,7 @@
         <div class="flex items-center ">
           <input
             class="w-full border rounded h-12 px-4 focus:outline-none -mr-7"
-            placeholder="Password"
+            placeholder="Contraseña"
             type="password"
             v-model="password"
           />
@@ -37,20 +37,20 @@
         <div>
           <div class="flex flex-col md:flex-row md:items-center justify-between ">
             <button
-              class="w-full border-x border-y border-emerald-400 px-2 py-1 rounded-md text-emerald-400 text-s font-bold hover:bg-slate-50 hover:text-emerald-400 transition duration-3000"
+              class="w-full border-x border-y border-emerald-400 px-2 py-1 rounded-md text-emerald-400 text-s font-bold hover:bg-emerald-400 hover:text-slate-50 hover:transition hover:duration-3000"
               @click="signIn"
             >
-              Sign In
+              Log In
             </button>
           </div>
         </div>
       </div>
 </div>
 <p
-  class="text-gray-400 text-sm self-center md:self-auto mt-2 md:mt-2"
+  class="text-gray-400 text-sm self-center md:self-auto mt-3 md:mt-3"
 >
-  Don’t have an account?
-  <strong><PersonalRouter :route="route" :buttonText="buttonText" /></strong>
+  ¿Aún no te has registrado?
+  <strong><PersonalRouter :route="route" :buttonText="buttonText" class="hover:text-gray-800" /></strong>
 </p>
 </template>
 
