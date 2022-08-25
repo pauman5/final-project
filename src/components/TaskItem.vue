@@ -1,5 +1,5 @@
 <template>
-  <div @click="$emit('toggleReminder',task.id,!task.is_complete)" class="m-auto my-1 w-96 max-w-lg items-center justify-center overflow-hidden rounded-2xl bg-white shadow-xl">
+  <div @click="$emit('toggleReminder',task.id,!task.is_complete)" class=" my-2 h-full max-w-lg items-center justify-center overflow-hidden rounded-2xl bg-white shadow-xl">
     <div class="h-12 bg-emerald-100 flex flex-row justify-between px-4">
       <button @click="$emit('deleteTask',task.id)">
         <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-red-500 w-6 h-6">
@@ -15,7 +15,7 @@
     <div class="-mt-10 flex justify-center">
       <img class="h-20 rounded-full" src="https://media.istockphoto.com/vectors/male-profile-flat-blue-simple-icon-with-long-shadow-vector-id522855255?k=20&m=522855255&s=612x612&w=0&h=fLLvwEbgOmSzk1_jQ0MgDATEVcVOh_kqEe0rqi7aM5A=" />
     </div>
-    <div class="mt-2 mb-1 px-3 text-center text-lg font-medium">{{ task.title }}</div>
+    <div class="mt-1 mb-1 px-3 text-center text-lg font-medium">{{ task.title }}</div>
     <input v-if="editing" v-model="newTitle" type="texto" placeholder="Nuevo Titulo"/>
     <p class="mb-5 px-3 text-center text-sky-500">{{ task.description }}</p>
     <input v-if="editing"  v-model="newDescription" type="texto" placeholder="Nueva Descripción" />

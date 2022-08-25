@@ -1,20 +1,22 @@
 <template>
-  <div class="home">
+  <div>
     <Nav />
     <NewTask
       @addTask="addTask"
     />
-    <div
-      class="flex flex-wrap"
-      v-for="task in tasks" 
-      :key="task.id"
-    >
-      <TaskItem 
-        :task="task"
-        @deleteTask="deleteTask"
-        @toggleReminder="toggleReminder"
-        @editTask="editTask"
-      />
+    <div class="flex flex-wrap">
+      <div
+        v-for="task in tasks" 
+        :key="task.id"
+        class="w-1/3"
+      >
+        <TaskItem 
+          :task="task"
+          @deleteTask="deleteTask"
+          @toggleReminder="toggleReminder"
+          @editTask="editTask"
+        />
+      </div>
     </div>
   </div>
 </template>
