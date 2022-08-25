@@ -59,12 +59,17 @@
 
  3. Colgar la pagina en Vercel
 
+# Dia 5: (25/08/2022)
 
+>> Objetivos de hoy: *acabar proyecto*
 
+ 1. Aplicar grid o wrap en las cards de las tareas.
 
+ 2. Aplicar estilos Signin Signup
 
+ 3. Acabar Footer
 
-
+ 3. Colgar la pagina en Vercel
 
 <!-- ## Important
 This app is not setUp to be deployed to a production environment like vercel or netlify. 
