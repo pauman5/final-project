@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="">
     <Nav />
     <NewTask
       @addTask="addTask"
     />
-    <div class="flex flex-wrap items-center justify-center ">
+    <div class="min-h-screen flex flex-wrap items-center justify-center relative">
       <div
         v-for="task in tasks" 
         :key="task.id"
@@ -17,7 +17,9 @@
           @editTask="editTask"
         />
       </div>
+      <Footer/>
     </div>
+    
   </div>
 </template>
 
@@ -27,6 +29,7 @@ import { useTaskStore } from "../stores/task";
 import Nav from "../components/Nav.vue";
 import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";
+import Footer from "../components/Footer.vue";
 
 const tasks = ref([])
 
@@ -49,15 +52,12 @@ fetchTasks();
 
 const addTask = async (taskTitle,taskDescription) => {
     try {
-      // calls the user store and send the users info to backend to logIn
       await useTaskStore().addTask(taskTitle,taskDescription)
       fetchTasks();
       if (error) throw error;
       console.log(tasks.value);
     } catch (error) {
-      // displays error message
       errorMsg.value = `Error: ${error.message}`;
-      // hides error message
       setTimeout(() => {
         errorMsg.value = null;
       }, 5000);
@@ -66,15 +66,12 @@ const addTask = async (taskTitle,taskDescription) => {
 
 const deleteTask = async (taskId) => {
     try {
-      // calls the user store and send the users info to backend to logIn
       await useTaskStore().deleteTask(taskId);
       fetchTasks();
       if (error) throw error;
       console.log(tasks.value);
     } catch (error) {
-      // displays error message
       errorMsg.value = `Error: ${error.message}`;
-      // hides error message
       setTimeout(() => {
         errorMsg.value = null;
       }, 5000);
@@ -83,14 +80,11 @@ const deleteTask = async (taskId) => {
 
 const toggleReminder = async (taskId,newValue) => {
     try {
-      // calls the user store and send the users info to backend to logIn
       await useTaskStore().toggleReminder(taskId,newValue);
       fetchTasks();
       if (error) throw error;
     } catch (error) {
-      // displays error message
       errorMsg.value = `Error: ${error.message}`;
-      // hides error message
       setTimeout(() => {
         errorMsg.value = null;
       }, 5000);
@@ -99,15 +93,12 @@ const toggleReminder = async (taskId,newValue) => {
 
 const editTask = async (taskId,newTitle,newDescription) => {
     try {
-      // calls the user store and send the users info to backend to logIn
       await useTaskStore().editTitle(taskId,newTitle);
       await useTaskStore().editDescription(taskId,newDescription);
       fetchTasks();
       if (error) throw error;
     } catch (error) {
-      // displays error message
       errorMsg.value = `Error: ${error.message}`;
-      // hides error message
       setTimeout(() => {
         errorMsg.value = null;
       }, 5000);

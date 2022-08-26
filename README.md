@@ -1,8 +1,72 @@
-# Dia 1: (19/08/2022)
+
+# TareApp
+
+TareApp es la plataforma que te permite crear, editar y borrar tareas. 
+Te ayudará a conseguir una mejor organización en tu dia a dia.
+
+## Cómo se usa
+
+TareApp es un App Web así que puedes acceder a ella: [TareApp Web](https://final-project-pauman5.vercel.app)
+
+## Cómo contribuir
+
+Puedes crear un pull request al proyecto y mejorarlo: [GitHub Link](https://github.com/pauman5/final-project)
+
+## Recursos
+
+Los recursos utilizados en este proyecto han sido: 
+   -  Framework:
+      - Vue.js
+      - Vite.js
+      - Pinia
+   - UI Frameworks:
+      - Tailwind CSS
+   - Icons:
+      - Tailwind Icons
+   - Fonts:
+      - Google Fonts
+   - JavaScript Libraries:
+      - Moment
+   - Repositorio:
+      - GitHub
+   - Base de Datos:
+      - Supabase
+   - Vercel
+
+## Proximas actualizaciones
+
+> Añadir una nueva key o columna al objeto tarea que te permita definir la variedad o tipo de tarea.
+
+ Tipos de Tarea:
+   - Casa
+   - Ocio
+   - Trabajo
+   - Deporte
+
+## Autores y reconocimiento
+
+   Este proyecto ha sido realizao por:
+   - Pablo Ibáñez (Pauman)
+   
+   Y asesorado por los profesores:
+   - Diego Zito
+   - Carlos Garrido (Jarko)
+   - Aleix Abuli
+
+   Y acompañado por todo el grupo de alumnos del Bootcamp ❤️.
+
+## Licencia
+
+   MIT
+
+
+# Stand Ups (durante la ejecución del proyecto)
+
+## Dia 1: (19/08/2022)
 
  Lo primero es acabar de repasar las directrices del proyecto y los archivos y estructura general.
 
->> Objetivos de hoy: *signUp completo*
+> Objetivos de hoy: *signUp completo*
 
  1. Hacer las estructuras html del los componentes:
     - Nav
@@ -24,9 +88,9 @@
     - Primeras pruebas
     - signUp
 
-# Dia 2: (22/08/2022)
+## Dia 2: (22/08/2022)
 
->> Objetivos de hoy: *signOut y tareas*
+> Objetivos de hoy: *signOut y tareas*
 
  1. Hacer las estructuras html del los componentes:
     - Footer
@@ -36,9 +100,9 @@
     - Cerrar sesion
     - Crear Task
 
-# Dia 3: (23/08/2022)
+## Dia 3: (23/08/2022)
 
->> Objetivos de hoy: *events&props y empezar style*
+> Objetivos de hoy: *events&props y empezar style*
 
  1. Hacer las estructuras html del los componentes:
     -Task
@@ -49,9 +113,9 @@
     - eliminar tarea
     - editar tarea
 
-# Dia 4: (24/08/2022)
+## Dia 4: (24/08/2022)
 
->> Objetivos de hoy: *editar tarea y style*
+> Objetivos de hoy: *editar tarea y style*
 
  1. Terminar la logica para editar las tareas.
 
@@ -59,9 +123,9 @@
 
  3. Colgar la pagina en Vercel
 
-# Dia 5: (25/08/2022)
+## Dia 5: (25/08/2022)
 
->> Objetivos de hoy: *acabar proyecto*
+> Objetivos de hoy: *acabar proyecto*
 
  1. Aplicar grid o wrap en las cards de las tareas.
 
@@ -69,64 +133,4 @@
 
  3. Acabar Footer
 
- 3. Colgar la pagina en Vercel
-
-<!-- ## Important
-This app is not setUp to be deployed to a production environment like vercel or netlify. 
-
-Friday on August 19 we will look at how can we deploy this app to Vercels ecosystem.
-
-
-## Project Setup
-
-```sh
-npm install
-```
-
-## Set Up your Environment Variables from Supabase located at the root folder of the project
-
-```sh
-VITE_SUPABASE_URL
-VITE_SUPABASE_ANON_KEY 
-```
-#### Once you have added your environment variables, head to your .gitIgnore file located at the root folder and uncomment the .env file naming to avoid sharing any private access keys to your database
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Good Music is always key!
-
-```sh
-Wu Tang Clan
-A tribe called quest
-Kendrick Lamar
-Outkast
-Dr. Dre
-N.W.A
-De La Soul 
-Ms. Lauryn Hill
-J. Cole 
-Guts
-Naughty By Nature
-People under the stairs
-Nujabes
-NAS
-KRS-One
-The Pharcyde
-Jurassic 5
-Gang starr
-Jay Z
-Mobb Depp
-Common
-Lil Supa
-```
-[Hip Hop Spotify Playlist](https://open.spotify.com/playlist/4vKftyhS1gQovakehVcq1u?si=a7a119382dfe40da) -->
+ 4. Colgar la pagina en Vercel

@@ -21,8 +21,11 @@
           />
         </svg>
       </button>
-      <h1 v-if="task.is_complete" class="text-4xl font-bold text-emerald-400">
-        👌<small>HECHO!</small>👌
+      <h1 v-if="task.is_complete" class="px-2 text-2xl font-bold text-emerald-400 sm:text-4xl">
+        👌<small>¡HECHO!</small>👌
+      </h1>
+      <h1 v-if="!task.is_complete" class="px-2 text-2xl font-bold text-white sm:text-4xl">
+        <small>PENDIENTE</small>
       </h1>
       <button @click="changeEditing">
         <svg
@@ -156,10 +159,14 @@ const changeEditing = () => {
 const editTask = (task) => {
   if (newTitle.value && newDescription.value) {
     emit("editTask", task.id, newTitle.value, newDescription.value);
+    newTitle.value = "";
+    newDescription.value = "";
   } else if (!newDescription.value) {
     emit("editTask", task.id, newTitle.value, task.description);
+    newTitle.value = "";
   } else if (!newTitle.value) {
     emit("editTask", task.id, task.title, newDescription.value);
+    newDescription.value = "";
   } else {
     errorMsg.value = `Error: Debe rellenar algun campo para editar`;
     errorMsgContainer.value = true;
