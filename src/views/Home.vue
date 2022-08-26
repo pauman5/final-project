@@ -1,10 +1,10 @@
 <template>
-  <div class="">
+  <div>
     <Nav />
     <NewTask
       @addTask="addTask"
     />
-    <div class="min-h-screen flex flex-wrap items-center justify-center relative">
+    <div class="flex flex-wrap items-center justify-center">
       <div
         v-for="task in tasks" 
         :key="task.id"
@@ -17,9 +17,8 @@
           @editTask="editTask"
         />
       </div>
-      <Footer/>
     </div>
-    
+    <Footer/>
   </div>
 </template>
 
