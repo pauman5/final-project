@@ -2,7 +2,7 @@
   <div v-if="errorMsg" class="border border-red-400 px-2 py-1 mb-2 rounded-md text-red-400">
       <p>{{ errorMsg }}</p>
   </div>
-  <div class="bg-white p-5 max-w-md mx-auto rounded shadow-lg shadow-slate-300">
+  <div class="bg-white p-5 max-w-md mx-auto rounded shadow-lg shadow-slate-700">
     <h2 class="text-3xl font-bold text-emerald-300 px-4">¡Bienvenid@!</h2>
     <div class="mt-2 space-y-2">
       <input
@@ -68,7 +68,7 @@
       </div>
     </div>
   </div>
-  <p class="text-gray-400 text-sm self-center md:self-auto mt-3 md:mt-3">
+  <p class="text-gray-600 text-sm self-center md:self-auto mt-3 md:mt-3">
     ¿Aún no te has registrado?
     <strong
       ><PersonalRouter

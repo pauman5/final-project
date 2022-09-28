@@ -1,16 +1,19 @@
 <template>
-  <div class="w-full flex flex-col items-center">
-    <video 
+  <div class="relative h-screen">
+    <div class="absolute top-0 left-0 z-01 w-full h-full overflow-hidden ">
+      <video 
       autoplay
       loop
       muted
-      class="absolute z-01 w-auto min-w-full min-h-full max-w-none"
+      class="relative top-50 left-50 object-cover w-full h-full "
     >
       <source
         src="https://assets.mixkit.co/videos/preview/mixkit-beautiful-shot-of-a-cloudy-sky-flying-through-them-30308-large.mp4"
         type="video/mp4"
       />
     </video>
+    </div>
+    <div class="w-full flex flex-col items-center">
     <div class="absolute z-99">
       <div class="flex flex-row items-center mt-8 mb-3 text-emerald-400">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-20 mr-3 drop-shadow-lg">
@@ -18,11 +21,12 @@
       </svg>
       <h1 class="text-4xl text-center font-bold drop-shadow-lg md:text-6xl">TareApp</h1>
       </div>
-      <h3 class="text-base mb-3 text-slate-600 drop-shadow-lg md:text-xl">
+      <h3 class="text-base mb-3 text-slate-900 drop-shadow-lg md:text-xl">
         ¡¡Empieza ya a organizar tus tareas!!
       </h3>
       <router-view></router-view>
     </div>
+  </div>
   </div>
 </template>
 
